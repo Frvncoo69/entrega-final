@@ -1,162 +1,158 @@
-/* Estilo general del cuerpo */
+/* Estilo general para el fondo de la página */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #ffffff, #5fbded); /* Degradado de blanco a azul */
-    color: #000; /* Color negro para todas las letras */
-    height: 100%; /* Asegura que el body tenga una altura completa */
-    min-height: 100vh; /* Asegura que la altura mínima sea el 100% de la ventana */
-    display: flex;
-    flex-direction: column;
+    background: linear-gradient(to bottom, #00aaff, #ffffff); /* Degradado de azul a blanco */
 }
 
-/* Cabecera principal */
-h1 {
-    text-align: center;
-    font-size: 3rem;
-    margin-top: 50px;
-    color: #5fbded; /* Mantiene el color original para "Tecnostore" */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-/* Subtítulos */
-h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin: 20px 0;
-    color: #000; /* Color negro */
-}
-
-h3 {
-    text-align: justify;
-    font-size: 1.2rem;
-    margin: 20px 40px;
-    line-height: 1.8;
-    color: #000; /* Color negro */
-}
-
-/* Botón de acción */
-.action-btn {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #5fbded;
-    color: #fff;
-    font-size: 1rem;
-    text-transform: uppercase;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    width: fit-content;
-}
-
-.action-btn:hover {
-    background-color: #45a1c9;
-    transition: 0.3s;
-}
-
-/* Estilo de la imagen */
-img {
-    display: block;
-    margin: 50px auto 20px auto; /* Coloca la imagen al final con un margen inferior */
-    width: 300px; /* Aumenta el tamaño de la imagen */
-    height: auto;
-}
-
-/* Estilo del texto de derechos reservados */
-footer p {
-    text-align: center;
-    font-size: 1.5rem; /* Tamaño más grande para el texto */
-    color: #000; /* Color negro */
-    margin-top: 20px;
-}
-
-/* Estilo para el carrusel */
-.carousel {
-    position: relative;
-    width: 80%;
-    margin: 0 auto;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    background-color: #fff; /* Fondo blanco solo para el carrusel */
-    border-radius: 10px; /* Bordes redondeados para el carrusel */
-    padding: 20px 0; /* Espaciado alrededor del carrusel */
-    margin-bottom: 30px; /* Espacio entre el carrusel y el pie de página */
-}
-
-.carousel-images {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.carousel-images img {
-    width: 100px;  /* Tamaño más pequeño para las imágenes */
-    height: auto;
-    margin: 0 20px; /* Mayor espacio entre las imágenes */
-}
-
-.carousel-buttons {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-}
-
-.carousel-buttons button {
-    background-color: rgba(0, 0, 0, 0.5);
+/* Los demás estilos permanecen igual */
+header {
+    background-color: #333;
     color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.carousel-buttons button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Estilo para el contenedor de contacto */
-.contact-us {
-    background-color: #5fbded;
-    color: #fff;
+    text-align: center;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin-top: 30px;
-    font-size: 1rem;
 }
 
-/* Título del contenedor */
-.contact-us h3 {
-    text-align: center;
-    margin-bottom: 15px;
-    font-size: 1.5rem;
+h1 {
+    margin: 0;
 }
 
-/* Lista de contacto */
-.contact-us ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
 }
 
-.contact-us ul li {
+.main-content {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    margin-right: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.description h2 {
+    font-size: 24px;
     margin-bottom: 10px;
 }
 
-.contact-us ul li strong {
-    font-weight: bold;
+.description p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-.contact-us a {
-    color: #fff;
-    text-decoration: none;
+.action-btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-.contact-us a:hover {
-    text-decoration: underline;
+.action-btn:hover {
+    background-color: #555;
+}
+
+.download-link, .download-qr {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.qr-container {
+    text-align: center;
+}
+
+.contact-us {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-us h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.contact-us ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-us li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer img {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+/* Responsividad automática sin media queries */
+.container .main-content {
+    flex: 1;
+    min-width: 300px;
+    max-width: 100%;
+    padding: 20px;
+}
+
+.download-link, .download-qr {
+    width: 100%;
+}
+
+.qr-container {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+footer {
+    padding: 20px 0;
+}
+
+/* Asegura que los botones y textos no se desborden en pantallas pequeñas */
+button, a {
+    word-wrap: break-word;
+}
+
+/* Ajuste para pantallas de tamaño pequeño */
+body {
+    font-size: 14px;
+}
+
+/* Estilos para dispositivos móviles */
+#mobile-download {
+    display: block;
+}
+
+#pc-download {
+    display: none;
+}
+
+/* Estilos para pantallas grandes */
+#mobile-download {
+    display: none;
+}
+
+#pc-download {
+    display: block;
 }

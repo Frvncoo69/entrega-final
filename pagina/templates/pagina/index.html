@@ -1,57 +1,42 @@
 {% load static %}
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnostore</title>
-    <!-- Enlace a tu archivo de estilos -->
     <link rel="stylesheet" href="{% static 'pagina/css/style.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
 </head>
 <body>
     <header>
         <h1>TECNOSTORE</h1>
     </header>
 
-    <main>
-        <h2>¿En qué consiste?</h2>
-        <h3>
-            Tecnostore es una aplicación móvil que tiene como principal función la venta de productos tecnológicos. 
-            Para lograr todo lo que esto conlleva, hemos implementado un sistema que permitirá: visualizar, agregar y modificar productos según lo estime el administrador, 
-            mientras que el cliente podrá únicamente visualizar y comprar los artículos.
-        </h3>
-
-        <button class="action-btn">Explorar Productos</button>
-
-        <!-- Carrusel de imágenes -->
-        <div class="carousel">
-            <div class="carousel-images">
-                <img src="{% static 'pagina/images/teclado5.jpg' %}" alt="Teclado">
-                <img src="{% static 'pagina/images/mouse1.jpg' %}" alt="Mouse">
-                <img src="{% static 'pagina/images/silla2.jpg' %}" alt="Silla">
-                <img src="{% static 'pagina/images/pc1.jpg' %}" alt="PC">
-                <img src="{% static 'pagina/images/audifono1.jpg' %}" alt="Audífono">
+    <main class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-8">
+                <h2>¿En qué consiste?</h2>
+                <h3>
+                    Tecnostore es una aplicación móvil que tiene como principal función la venta de productos tecnológicos. 
+                    Para lograr todo lo que esto conlleva, hemos implementado un sistema que permitirá: visualizar, agregar y modificar productos según lo estime el administrador, 
+                    mientras que el cliente podrá únicamente visualizar y comprar los artículos.
+                </h3>
             </div>
-            <div class="carousel-buttons">
-                <button class="prev-btn">&#10094;</button>
-                <button class="next-btn">&#10095;</button>
-            </div>
+        </div>
+
+        <!-- Contenedor para el enlace de descarga en móviles -->
+        <div id="mobile-download" style="display: none;">
+            <p>Haz clic en el siguiente enlace para descargar apk:</p>
+            <a href="https://github.com/Frvncoo69/app_final/releases/download/1.0/tecnostore.apk" target="_blank">Visitar Tecnostore</a>
         </div>
 
         <!-- Contenedor para el QR en PC -->
-        <div id="qr-container" style="display: none;">
-            <p>Escanea el QR para más información:</p>
-            <img src="{% static 'pagina/images/qr-code.png' %}" alt="QR Code" width="200" height="200">
+        <div id="pc-download" style="display: none;">
+            <p>Escanea el QR para descargar apk:</p>
+            <div id="qr-code" style="width: 200px; height: 200px;"></div>
         </div>
 
-        <!-- Contenedor para el enlace en teléfonos -->
-        <div id="link-container" style="display: none;">
-            <p>Haz clic en el siguiente enlace para más información:</p>
-            <a href="https://www.tecnostore.com" target="_blank">Visitar Tecnostore</a>
-        </div>
-
-        <!-- Contenedor de Contacto (moved below content) -->
         <div class="contact-us">
             <h3>Contáctanos</h3>
             <ul>
@@ -67,66 +52,6 @@
         <p>&copy; 2024 Tecnostore. Todos los derechos reservados.</p>
     </footer>
 
-    <script>
-        let currentIndex = 0;
-        const images = document.querySelectorAll('.carousel-images img');
-        const totalImages = images.length;
-
-        // Función para mover el carrusel hacia la izquierda
-        function moveLeft() {
-            currentIndex--;
-            if (currentIndex < 0) {
-                currentIndex = totalImages - 1; // Al llegar al principio, va al final
-            }
-            updateCarousel();
-        }
-
-        // Función para mover el carrusel hacia la derecha
-        function moveRight() {
-            currentIndex++;
-            if (currentIndex >= totalImages) {
-                currentIndex = 0; // Al llegar al final, va al principio
-            }
-            updateCarousel();
-        }
-
-        // Actualiza la posición del carrusel
-        function updateCarousel() {
-            const newTransformValue = -currentIndex * (images[0].clientWidth + 20); // 20 es el margen entre las imágenes
-            document.querySelector('.carousel-images').style.transform = `translateX(${newTransformValue}px)`;
-        }
-
-        // Asignar eventos a las flechas
-        document.querySelector('.prev-btn').addEventListener('click', moveLeft);
-        document.querySelector('.next-btn').addEventListener('click', moveRight);
-
-        // Mostrar el QR o enlace dependiendo del tipo de dispositivo
-        function showDeviceSpecificLink() {
-            const userAgent = navigator.userAgent.toLowerCase();
-            const isMobile = /iphone|ipod|android|blackberry|windows phone/i.test(userAgent);
-
-            const qrContainer = document.getElementById("qr-container");
-            const linkContainer = document.getElementById("link-container");
-
-            if (isMobile) {
-                // Mostrar el enlace en teléfonos
-                linkContainer.style.display = 'block';
-                qrContainer.style.display = 'none';
-            } else {
-                // Mostrar el QR en PC
-                qrContainer.style.display = 'block';
-                linkContainer.style.display = 'none';
-            }
-        }
-
-        // Inicializar la página
-        window.onload = function() {
-            // Iniciar el carrusel y mostrar el QR o enlace
-            showDeviceSpecificLink();
-        };
-    </script>
-
-    <!-- Enlace a tu archivo JavaScript -->
-    <script src="{% static 'js/java.js' %}"></script>
+    <script src="{% static 'pagina/js/java.js' %}"></script>
 </body>
 </html>
