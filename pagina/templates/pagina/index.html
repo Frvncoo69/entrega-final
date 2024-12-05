@@ -25,18 +25,33 @@
             </div>
         </div>
 
-        <!-- Contenedor para el enlace de descarga en móviles -->
-        <div id="mobile-download" style="display: none;">
-            <p>Haz clic en el siguiente enlace para descargar apk:</p>
-            <a href="https://github.com/Frvncoo69/app_final/releases/download/1.0/tecnostore.apk" target="_blank">Visitar Tecnostore</a>
+        <!-- Carrusel de imágenes (estáticas) -->
+        <div class="carousel-container">
+            <h2>Conoce nuestra App</h2>
+            <div class="carousel">
+                <img src="{% static 'pagina/images/img1.jpg' %}" alt="Imagen 1">
+                <img src="{% static 'pagina/images/img2.jpg' %}" alt="Imagen 2">
+                <img src="{% static 'pagina/images/img3.jpg' %}" alt="Imagen 3">
+                <img src="{% static 'pagina/images/img4.jpg' %}" alt="Imagen 4">
+            </div>
+            <!-- Botones de navegación -->
+            <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="next" onclick="moveCarousel(1)">&#10095;</button>
         </div>
 
         <!-- Contenedor para el QR en PC -->
-        <div id="pc-download" style="display: none;">
+        <div id="pc-download" class="centered">
             <p>Escanea el QR para descargar apk:</p>
             <div id="qr-code" style="width: 200px; height: 200px;"></div>
         </div>
 
+        <!-- Contenedor para el enlace de descarga en móviles -->
+        <div id="mobile-download" class="centered">
+            <p>Haz clic en el siguiente enlace para descargar apk:</p>
+            <a href="https://github.com/Frvncoo69/app_final/releases/download/1.0/tecnostore.apk" target="_blank">Visitar Tecnostore</a>
+        </div>
+
+        <!-- Contenedor de contacto, ahora está abajo -->
         <div class="contact-us">
             <h3>Contáctanos</h3>
             <ul>

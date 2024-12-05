@@ -6,7 +6,7 @@ body {
     background: linear-gradient(to bottom, #00aaff, #ffffff); /* Degradado de azul a blanco */
 }
 
-/* Los demás estilos permanecen igual */
+/* Estilo del encabezado */
 header {
     background-color: #333;
     color: white;
@@ -18,6 +18,7 @@ h1 {
     margin: 0;
 }
 
+/* Contenedor principal */
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -25,6 +26,7 @@ h1 {
     padding: 20px;
 }
 
+/* Estilos del contenido principal */
 .main-content {
     flex: 1;
     min-width: 300px;
@@ -61,6 +63,7 @@ h1 {
     background-color: #555;
 }
 
+/* Estilos para los enlaces de descarga y QR */
 .download-link, .download-qr {
     text-align: center;
     margin-top: 20px;
@@ -71,12 +74,17 @@ h1 {
     text-align: center;
 }
 
+/* Estilos para el contenedor de contacto */
 .contact-us {
     background-color: white;
     padding: 20px;
     margin-top: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;  /* Centra el texto dentro del contenedor */
+    width: 80%; /* Ajusta el tamaño del contenedor */
+    margin-left: auto; /* Centra el contenedor horizontalmente */
+    margin-right: auto; /* Centra el contenedor horizontalmente */
 }
 
 .contact-us h3 {
@@ -95,6 +103,7 @@ h1 {
     margin-bottom: 10px;
 }
 
+/* Estilos del pie de página */
 footer {
     background-color: #333;
     color: white;
@@ -107,52 +116,65 @@ footer img {
     margin-bottom: 10px;
 }
 
-/* Responsividad automática sin media queries */
-.container .main-content {
-    flex: 1;
-    min-width: 300px;
-    max-width: 100%;
-    padding: 20px;
+/* Carrusel de imágenes */
+.carousel-container {
+    text-align: center;
+    margin-top: 30px;
+    position: relative;
+    width: 100%;  /* Asegura que el contenedor del carrusel ocupe todo el ancho */
+    max-width: 300px;  /* Ajusta el tamaño máximo del carrusel */
+    margin: 0 auto;  /* Centra el carrusel */
+    overflow: hidden;  /* Oculta las imágenes que se salen del contenedor */
 }
 
-.download-link, .download-qr {
-    width: 100%;
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
-.qr-container {
-    width: 100%;
-    max-width: 200px;
-    margin: 0 auto;
+.carousel img {
+    width: 50%;  /* Hace que cada imagen ocupe solo el 50% del contenedor */
+    max-width: 120px; /* Limita el tamaño máximo de las imágenes */
+    height: auto;  /* Mantiene la proporción original de las imágenes */
+    margin: 0 10px;  /* Añade un espacio entre las imágenes */
+    border-radius: 8px;
 }
 
-footer {
-    padding: 20px 0;
+/* Estilos para los botones de navegación */
+button {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 16px;
+    cursor: pointer;
+    z-index: 1000;
 }
 
-/* Asegura que los botones y textos no se desborden en pantallas pequeñas */
-button, a {
-    word-wrap: break-word;
+.prev {
+    left: 0;
+    transform: translateY(-50%);
 }
 
-/* Ajuste para pantallas de tamaño pequeño */
-body {
-    font-size: 14px;
+.next {
+    right: 0;
+    transform: translateY(-50%);
 }
 
-/* Estilos para dispositivos móviles */
-#mobile-download {
-    display: block;
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-#pc-download {
-    display: none;
+/* Estilos para centrar los elementos */
+.centered {
+    text-align: center; /* Centra el contenido en el contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+    width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho */
 }
 
-/* Estilos para pantallas grandes */
-#mobile-download {
-    display: none;
-}
-
-#pc-download {
-    display: block;
+/* Estilos para el contenedor de QR */
+#qr-code {
+    margin: 0 auto; /* Asegura que el QR en sí se centre */
+    display: block; /* Hace que el QR se comporte como un bloque centrado */
 }
